@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.6)
 # Set the project name.
 #
 
-PROJECT (CmakeTemplate)
+PROJECT (StereoView)
 
 SET (EXECUTABLE_OUTPUT_PATH  ${PROJECT_BINARY_DIR}/bin CACHE INTERNAL
   "Where to put the executables")
@@ -26,7 +26,7 @@ SUBDIRS (
 FIND_PACKAGE(OpenCV REQUIRED)
 INCLUDE_DIRECTORIES(${OpenCV_INCLUDE_DIRS})
 
-#INCLUDE_DIRECTORIES (${PROJECT_SOURCE_DIR}/TempClass/wcdMinPath)
+#INCLUDE_DIRECTORIES (${PROJECT_SOURCE_DIR}/DahengLib/Apps/ImageReader)
 INCLUDE_DIRECTORIES(${PROJECT_BINARY_DIR})
 
 
