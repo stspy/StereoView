@@ -4,7 +4,7 @@
 #include "highgui.h"
 int main(void)
 {
-
+	
  	cvNamedWindow("picShow0",1);
  	cvNamedWindow("picShow1",1);
  	

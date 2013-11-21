@@ -1,4 +1,5 @@
 SUBDIRS (
 	ImageReader
 	ImageReaderDLLTest
+	DahengImageCapture
 	) 

@@ -9,6 +9,7 @@
 #endif
 
 //#include "CGDef.h"
+//typedef void cgCapture;
 typedef void* cgHANDLE;
 typedef unsigned char BYTE;
 typedef enum  {
