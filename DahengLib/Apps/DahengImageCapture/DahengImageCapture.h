@@ -37,6 +37,7 @@ private:
 	double m_height;
 	//Ptr<>
 	cgIMAGEINFO * m_cgImg;
+	IplImage *m_imgIpl;
 	Mat m_imgMatOrigin;
 	Mat m_imgMatResize;
 	//Ptr<IplImage> m_img;//=cvCreateImage(cvSize(768,576),8,3);

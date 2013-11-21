@@ -11,7 +11,9 @@ DahengImageCapture::DahengImageCapture(int device):cap(0)
 
 DahengImageCapture::~DahengImageCapture()
 {
+	cvReleaseImage(&m_imgIpl);
 	cgWithdrawImageReader(cap);
+	m_imgMatOrigin.data=NULL;
 	//cap.release();
 	//m_img.release();
 }
@@ -20,9 +22,10 @@ bool DahengImageCapture::open(int device)
 {
 	if (!isOpened())
 	{
+		m_imgIpl=cvCreateImage(cvSize(768,576),8,3);
 		cap = cgInitImageReader(device);
-		m_height=768;
-		m_width=576;
+		m_height=576;
+		m_width=768;
 		m_imgMatOrigin.create(768,576,CV_8UC3);
 	}
 	return isOpened();
@@ -91,7 +94,8 @@ bool DahengImageCapture::read(Mat& image)
 bool DahengImageCapture::getOneframeOrigin()
 {
 	cgGetImage(cap,&m_cgImg);
-	m_imgMatOrigin.data=m_cgImg->pImage;
+	m_imgIpl->imageData=(char*)m_cgImg->pImage;
+	m_imgMatOrigin=m_imgIpl;
 	return 1;
 }
 
